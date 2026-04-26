@@ -310,41 +310,97 @@ strong {
 @media (max-width: 1000px) {
   .info-grid {
     grid-template-columns: 1fr;
-    max-width: 90vw;
+    max-width: 600px;
+    margin-left: 0;
+    column-gap: 0;
+    row-gap: 2rem;
+    padding: 0 1rem;
   }
 
-  .hero-logo-wrapper,
-  .down-hand,
-  .socials-wrapper {
+  .hero-logo-wrapper {
     grid-column: 1;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .hero-logo {
+    width: 100%;
+    max-width: 400px;
+    margin-left: 0;
+    display: block;
+    margin-inline: auto;
   }
 
   .info-link-wrapper {
-    margin-bottom: -1.5rem;
+    grid-column: 1;
+    text-align: center;
+    margin-bottom: 0;
   }
 
-  .info-link {
-    text-align: left;
+  .info-text {
+    grid-column: 1;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+    text-align-last: center;
+    width: 100%;
+    max-width: 500px;
+    margin-inline: auto;
+    font-size: 1rem;
   }
 
   .info-hyphen {
     display: none;
   }
 
-  .abs-bottom-left,
-  .abs-bottom-right {
-    position: static;
-    transform: none;
-    text-align: center;
-    margin-top: 2rem;
+  .down-hand {
+    grid-column: 1;
+    margin-left: 0;
   }
 
+  .socials-wrapper {
+    grid-column: 1;
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .social-links-row {
+    justify-content: center;
+  }
+
+  .social-row-center {
+    margin-left: 0;
+  }
+
+  /* Fixed Side Footers -> Stacked on Mobile */
+  .abs-bottom-left,
+  .abs-bottom-right,
   .abs-bottom-center,
   .abs-way-bottom-right,
   .abs-way-bottom-center {
     position: static;
     transform: none;
     text-align: center;
-    margin-top: 2rem;
+    margin: 2rem auto;
+    width: 100%;
+    opacity: 0.6;
+  }
+
+  .main-content {
+    padding-bottom: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .hero-logo {
+    width: 90%;
+  }
+
+  .info-text {
+    font-size: 0.95rem;
   }
 }

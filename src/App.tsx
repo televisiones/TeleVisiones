@@ -3,21 +3,36 @@ import { SocialLinks } from './components/SocialLinks'
 
 function App() {
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 0, scale: 0.85 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.1 }
+      scale: 1,
+      transition: { 
+        staggerChildren: 0.25, 
+        delayChildren: 0.3,
+        duration: 1.2,
+        ease: [0.16, 1, 0.3, 1]
+      }
     }
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
+    hidden: { opacity: 0, scale: 0.95, y: 15 },
+    visible: { 
+      opacity: 1, 
+      scale: 1, 
+      y: 0, 
+      transition: { 
+        duration: 0.8, 
+        ease: [0.16, 1, 0.3, 1] 
+      } 
+    }
   }
 
   return (
     <div className="container">
       <motion.main 
+        key="main-content" // Force re-render/animation on refresh if needed
         className="main-content"
         variants={containerVariants}
         initial="hidden"
@@ -60,7 +75,12 @@ function App() {
       </motion.main>
 
       {/* Absolute Positioned Elements */}
-      <motion.div className="abs-bottom-left" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>
+      <motion.div 
+        className="abs-bottom-left" 
+        initial={{ opacity: 0, scale: 0.95 }} 
+        animate={{ opacity: 0.35, scale: 1 }} 
+        transition={{ delay: 1.2, duration: 1, ease: "easeOut" }}
+      >
         <a href="mailto:contact@televisiones.studio" className="contact-email">contact@televisiones.studio</a>
         <p className="contact-desc">
           For inquiries,<br/>
@@ -70,20 +90,40 @@ function App() {
         </p>
       </motion.div>
 
-      <motion.div className="abs-bottom-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>
+      <motion.div 
+        className="abs-bottom-center" 
+        initial={{ opacity: 0, scale: 0.95 }} 
+        animate={{ opacity: 0.35, scale: 1 }} 
+        transition={{ delay: 1.4, duration: 1, ease: "easeOut" }}
+      >
         <img src="/starburst.webp" alt="" className="starburst-img" />
         <div className="copyright">© TeleVisiønes 2026</div>
       </motion.div>
 
-      <motion.div className="abs-bottom-right" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>
+      <motion.div 
+        className="abs-bottom-right" 
+        initial={{ opacity: 0, scale: 0.95 }} 
+        animate={{ opacity: 0.35, scale: 1 }} 
+        transition={{ delay: 1.6, duration: 1, ease: "easeOut" }}
+      >
         <div className="rights-reserved">All Visions reserved</div>
       </motion.div>
 
-      <motion.div className="abs-way-bottom-right" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>
+      <motion.div 
+        className="abs-way-bottom-right" 
+        initial={{ opacity: 0, scale: 0.95 }} 
+        animate={{ opacity: 0.35, scale: 1 }} 
+        transition={{ delay: 1.8, duration: 1, ease: "easeOut" }}
+      >
         <div className="thats-it">that's it.</div>
       </motion.div>
 
-      <motion.div className="abs-way-bottom-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>
+      <motion.div 
+        className="abs-way-bottom-center" 
+        initial={{ opacity: 0, scale: 0.95 }} 
+        animate={{ opacity: 1, scale: 1 }} 
+        transition={{ delay: 2, duration: 1, ease: "easeOut" }}
+      >
         <div className="up-hand"><div className="hand-icon hand-up"></div></div>
         <div className="go-back">go back</div>
       </motion.div>
