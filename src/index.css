@@ -145,6 +145,7 @@ strong {
   width: auto;
   font-size: 1.063rem;
   line-height: 1.2;
+  letter-spacing: 0.01em;
   color: #e5f2e9;
   text-align: justify;
   text-align-last: justify;
