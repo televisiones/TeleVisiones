@@ -19,6 +19,18 @@
   box-sizing: border-box;
 }
 
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
 body {
   background-color: #0a060d;
   color: #e5f2e9;
@@ -29,6 +41,10 @@ body {
   line-height: 1.2;
   overflow-x: hidden;
   font-size: 16px;
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 ::selection {
@@ -73,13 +89,13 @@ strong {
   row-gap: 2.5rem;
   column-gap: 1.5rem;
   font-family: 'Lexend', sans-serif;
-  margin-left: -270px;
+  margin-left: -269px;
 }
 
 .hero-logo-wrapper {
   grid-column: 2;
   /* Forces logo to align exactly with the text block */
-  margin-bottom: 2rem;
+  margin-bottom: -2rem;
   display: flex;
   justify-content: center;
   width: 72%;
@@ -98,25 +114,31 @@ strong {
 
 .info-link-wrapper {
   white-space: nowrap;
-  text-align: left;
+  text-align: right;
+  position: relative;
+  --link-move: 75px;
+  left: var(--link-move);
 }
 
 .info-link {
   color: #e5f2e9;
   text-decoration: underline;
   font-size: 1.125rem;
+  font-weight: 200;
   letter-spacing: 0.02em;
   transition: opacity 0.2s;
+  opacity: 0.35;
 }
 
 .info-link:hover {
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .info-hyphen {
   color: #e5f2e9;
   margin-left: 0.5rem;
   font-size: 1.25rem;
+  opacity: 0.35;
 }
 
 .info-text {
@@ -135,7 +157,7 @@ strong {
   margin: 1rem 0;
   font-size: 2.5rem;
   text-align: center;
-  margin-left: -38px; /* Shifted 19px left as requested */
+  margin-left: -48px; /* Shifted 19px left as requested */
 }
 
 .socials-wrapper {
@@ -143,7 +165,7 @@ strong {
   display: flex;
   justify-content: flex-start;
   width: 100%;
-  margin-left: 67px;
+  margin-left: 65px;
 }
 
 .social-rows {
@@ -220,7 +242,7 @@ strong {
 
 /* Fixed Side Footers */
 .abs-bottom-left {
-  position: fixed;
+  position: absolute;
   bottom: 2rem;
   left: 2rem;
   font-size: 0.8rem;
@@ -249,13 +271,13 @@ strong {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  margin-left: 8px;
+  margin-left: -48px;
   opacity: 0.35;
 }
 
 .starburst-img {
-  width: 28px;
-  height: 28px;
+  width: 65px;
+  height: 65px;
   object-fit: contain;
   margin-bottom: 0.5rem;
 }
@@ -292,7 +314,7 @@ strong {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  margin-left: 8px;
+  margin-left: -19px;
 }
 
 .up-hand {

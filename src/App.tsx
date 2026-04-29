@@ -51,7 +51,7 @@ function App() {
           </motion.div>
 
           <motion.div variants={itemVariants} className="info-link-wrapper">
-            <a href="https://televisiones.studio/untitlednote" className="info-link">televisiones.studio/untitlednote</a>
+            <a href="https://televisiones.studio/untitlednote" className="info-link">televisiones.studio/untitlednote</a> <span className="info-hyphen">-</span>
           </motion.div>
           <motion.div variants={itemVariants} className="info-text">
             Currently we are working on<br /><strong>UNTITLED NOTE</strong>
